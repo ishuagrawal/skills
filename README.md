@@ -9,7 +9,7 @@ Agent Skills format.
 
 | Skill | What it's for |
 | --- | --- |
-| [`video-by-reference`](skills/video-by-reference/SKILL.md) | Give it a video (or YouTube link) whose style you love. It studies the frames and audio, writes a measured style bible, invents an original story, builds a deterministic browser animation, synthesizes the soundtrack, and renders a finished MP4. Works with any style: flat 2D, anime, pixel art, painterly, 3D, kinetic type, and more. |
+| [`video-by-reference`](skills/video-by-reference/SKILL.md) | Turns a video you love into an original animated short in the same style, with its own soundtrack. |
 
 ## Install
 
@@ -47,19 +47,21 @@ npx skills add ishuagrawal/skills
 Add `--skill video-by-reference` to install a single skill, `-a claude-code` (or another agent) to
 pick the target, and `-g` to install for your user instead of the current project.
 
-### claude.ai
+<details>
+<summary>claude.ai and Claude API</summary>
 
-1. Download the skill's zip from the
-   [latest release](https://github.com/ishuagrawal/skills/releases/latest), for example
-   `video-by-reference.zip`.
-2. In claude.ai, open **Settings**, find the **Skills** section, and upload the zip.
+**claude.ai:** download the skill's zip from the
+[latest release](https://github.com/ishuagrawal/skills/releases/latest) (for example
+`video-by-reference.zip`), then open **Settings**, find the **Skills** section, and upload it. This needs
+a Pro, Max, Team, or Enterprise plan with code execution turned on.
 
-This needs a Pro, Max, Team, or Enterprise plan with code execution turned on.
+**Claude API:** upload the same zip through the Skills API (`/v1/skills`) and use it with the
+code-execution tool. See the
+[Agent Skills docs](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview).
 
-### Claude API
+To update, download the new zip from the latest release and upload it again.
 
-Upload the same zip through the Skills API (`/v1/skills`) and use it with the code-execution tool.
-See the [Agent Skills docs](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview).
+</details>
 
 ### Manual
 
@@ -72,7 +74,6 @@ single project.
   turn on auto-update: open `/plugin`, go to **Marketplaces**, select **ishuagrawal**, and choose
   **Enable auto-update**. Third-party marketplaces have it off by default.
 - **`npx skills`:** `npx skills update`
-- **claude.ai / API:** download the new zip from the latest release and upload it again.
 
 ## Requirements per skill
 
