@@ -196,8 +196,10 @@ async function main() {
       if (sheet) {
         const cols = +opt('cols', 2), rows = Math.ceil(files.length / cols);
         const outF = path.join(outDir, sheet + '.png');
-        await new Promise(r => spawn('ffmpeg', ['-y', '-loglevel', 'error', '-pattern_type', 'glob', '-i', path.join(dir, '*.png'),
-          '-vf', `tile=${cols}x${rows}:padding=6:color=white`, '-frames:v', '1', outF], { stdio: 'inherit' }).on('exit', r));
+        // One input per still (ffmpeg's glob pattern type is missing from Windows builds).
+        const join = files.map((_, i) => `[${i}:v]`).join('') + `concat=n=${files.length}:v=1:a=0,`;
+        await new Promise(r => spawn('ffmpeg', ['-y', '-loglevel', 'error', ...files.flatMap(f => ['-i', f]),
+          '-filter_complex', `${join}tile=${cols}x${rows}:padding=6:color=white`, '-frames:v', '1', outF], { stdio: 'inherit' }).on('exit', r));
         console.log(outF);
       } else files.forEach(f => console.log(f));
       return;
