@@ -7,9 +7,9 @@
     {
       "name": "skills",
       "source": ".",
-      "description": "Ishu Agrawal's Agent Skills (video-by-reference, ...)",
+      "description": "Ishu Agrawal's Agent Skills (video-by-reference, image-by-reference, ...)",
       "category": "productivity",
-      "tags": ["skills", "animation", "video"]
+      "tags": ["skills", "animation", "video", "image", "illustration"]
     }
   ]
 }
