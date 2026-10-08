@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Picture Preview</title>
+  <style>
+    :root { color-scheme: dark; }
+    html, body { margin: 0; background: #0b0b0d; color: #eee; font: 13px/1.4 ui-monospace, Menlo, monospace; }
+    main { display: grid; justify-items: center; gap: 12px; padding: 16px; }
+    .bar { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+    canvas#view { max-width: 100%; max-height: calc(100vh - 90px); height: auto; }
+    input, select { background: #222; color: #eee; border: 1px solid #444; padding: 4px 6px; font: inherit; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="bar">
+      <label>seed <input id="seed" type="number" value="1" style="width:5em"></label>
+      <label>view <select id="mode"><option value="color">color</option><option value="notan">3-value</option><option value="side">beside reference</option></select></label>
+      <label>size <select id="size"><option value="0.35">draft</option><option value="0.6">medium</option><option value="1">full</option></select></label>
+    </div>
+    <canvas id="view"></canvas>
+  </main>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

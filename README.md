@@ -9,6 +9,7 @@ Claude Code and in any other agent that supports the open Agent Skills format.
 | Skill | What it's for |
 | --- | --- |
 | [`video-by-reference`](skills/video-by-reference/SKILL.md) | Turns a video you love into an original animated short in the same style, with its own soundtrack. |
+| [`image-by-reference`](skills/image-by-reference/SKILL.md) | Draws whatever you prompt in the exact art style of a reference image, measured trait by trait. |
 
 ## Install
 
@@ -85,6 +86,15 @@ single project.
 
 It works best in Claude Code or another local agent. The claude.ai and API sandboxes have no network
 access and may lack Chrome or ffmpeg, so they can read the skill but may not be able to render.
+
+**image-by-reference** renders PNGs in a headless browser and measures images in Python:
+
+- Node.js 22+
+- A headless Chromium (Playwright's `chrome-headless-shell` preferred; Google Chrome also works)
+- Python 3 with `numpy` and `Pillow`
+- `ffmpeg` (optional, only for contact sheets of seed variants)
+
+The same sandbox caveat applies on claude.ai and the API.
 
 ## Repository layout
 

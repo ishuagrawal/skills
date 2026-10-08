@@ -1,0 +1,9 @@
+{
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "draft": "node render/render.mjs --scale 0.4",
+    "render": "node render/render.mjs",
+    "serve": "npx serve ."
+  }
+}
