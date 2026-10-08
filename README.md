@@ -2,8 +2,7 @@
 
 Open-source [Agent Skills](https://agentskills.io) by [Ishu Agrawal](https://github.com/ishuagrawal).
 Each skill is a folder with a `SKILL.md` plus the scripts, references, and assets it needs. They work in
-Claude Code, on claude.ai, through the Claude API, and in any other agent that supports the open
-Agent Skills format.
+Claude Code and in any other agent that supports the open Agent Skills format.
 
 ## Skills
 
