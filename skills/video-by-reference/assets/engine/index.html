@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Film Preview</title>
+  <style>
+    :root { color-scheme: dark; }
+    html, body { margin: 0; background: #07060b; color: #f2f3ee; font: 13px/1.4 ui-monospace, Menlo, monospace; }
+    main { display: grid; place-items: center; min-height: 100vh; gap: 12px; padding: 16px; box-sizing: border-box; }
+    canvas#view { width: min(100%, 1280px); aspect-ratio: 16 / 9; background: #000; }
+    .bar { display: flex; gap: 12px; align-items: center; width: min(100%, 1280px); }
+    input[type=range] { flex: 1; }
+    button { background: #f2f3ee; color: #07060b; border: 0; padding: 6px 14px; font: inherit; font-weight: 700; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <main>
+    <canvas id="view" width="1920" height="1080"></canvas>
+    <div class="bar">
+      <button id="play">Play</button>
+      <input id="scrub" type="range" min="0" step="0.0001" value="0">
+      <span id="time"></span>
+    </div>
+  </main>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "ishuagrawal",
+  "owner": { "name": "Ishu Agrawal", "url": "https://github.com/ishuagrawal" },
+  "description": "Open-source Agent Skills by Ishu Agrawal",
+  "plugins": [
+    {
+      "name": "skills",
+      "source": ".",
+      "description": "Ishu Agrawal's Agent Skills (video-by-reference, ...)",
+      "category": "productivity",
+      "tags": ["skills", "animation", "video"]
+    }
+  ]
+}

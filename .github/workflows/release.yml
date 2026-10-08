@@ -1,0 +1,19 @@
+name: release
+on:
+  push:
+    tags: ['v*']
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Tag must match plugin.json version
+        run: test "v$(python3 -c 'import json;print(json.load(open(".claude-plugin/plugin.json"))["version"])')" = "$GITHUB_REF_NAME"
+      - run: python3 scripts/check_skills.py
+      - run: ./scripts/package_skills.sh
+      - name: Publish release with one zip per skill
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "$GITHUB_REF_NAME" dist/*.zip --title "$GITHUB_REF_NAME" --generate-notes

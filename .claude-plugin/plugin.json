@@ -1,0 +1,20 @@
+{
+  "name": "skills",
+  "displayName": "Ishu's Skills",
+  "version": "1.0.0",
+  "description": "Open-source Agent Skills by Ishu Agrawal. Includes video-by-reference: turn a reference video into an original, fully code-generated animated short with a synthesized soundtrack.",
+  "author": {
+    "name": "Ishu Agrawal",
+    "url": "https://github.com/ishuagrawal"
+  },
+  "homepage": "https://github.com/ishuagrawal/skills",
+  "repository": "https://github.com/ishuagrawal/skills",
+  "license": "MIT",
+  "keywords": [
+    "skills",
+    "agent-skills",
+    "animation",
+    "video",
+    "motion-graphics"
+  ]
+}
